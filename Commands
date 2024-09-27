@@ -1,0 +1,24 @@
+Get S3 Buckets list
+aws s3 ls
+2024-09-01 10:35:44 cf-templates-1b3ao3ev0spxe-us-east-1
+======================================================================
+List the contents of the bucket
+aws s3 ls cf-templates-1b3ao3ev0spxe-us-east-1
+2024-09-01 10:35:46        178 2024-09-01T103543.356Zjxr-EC2_Instance.yaml
+2024-09-01 11:06:41        178 2024-09-01T110638.439Z5q3-EC2_Instance.yaml
+2024-09-01 11:11:24        178 2024-09-01T111121.687Ztiq-EC2_Instance.yaml
+=======================================================================
+Delete all objects recursively
+aws s3 rm --recursive s3://cf-templates-1b3ao3ev0spxe-us-east-1
+delete: s3://cf-templates-1b3ao3ev0spxe-us-east-1/2024-09-01T103543.356Zjxr-EC2_Instance.yaml
+delete: s3://cf-templates-1b3ao3ev0spxe-us-east-1/2024-09-01T111121.687Ztiq-EC2_Instance.yaml
+delete: s3://cf-templates-1b3ao3ev0spxe-us-east-1/2024-09-01T110638.439Z5q3-EC2_Instance.yaml
+delete: s3://cf-templates-1b3ao3ev0spxe-us-east-1/2024-09-01T113521.137Zd1q-Updated_EC2_Instance.yaml
+=======================================================================
+Delete the bucket
+aws s3 rb s3://cf-templates-1b3ao3ev0spxe-us-east-1
+remove_bucket: cf-templates-1b3ao3ev0spxe-us-east-1
+=======================================================================
+Create bucket
+aws s3 mb s3://my-trigger-bucket-2709 --region us-east-1
+make_bucket: my-trigger-bucket-2709
