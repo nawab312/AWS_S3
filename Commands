@@ -22,3 +22,17 @@ remove_bucket: cf-templates-1b3ao3ev0spxe-us-east-1
 Create bucket
 aws s3 mb s3://my-trigger-bucket-2709 --region us-east-1
 make_bucket: my-trigger-bucket-2709
+
+
+
+
+============================== PYTHON S3 ==============================
+import boto3
+
+Create an s3 client This client object will be used to make requests to the S3 API.
+s3 = boto3.client('s3)
+
+This line calls the list_buckets() method on the s3 client object. This method retrieves a list of all S3 buckets that the current user has access to
+response = s3.list_buckets()
+
+
